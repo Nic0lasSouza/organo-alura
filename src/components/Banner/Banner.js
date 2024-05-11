@@ -1,6 +1,6 @@
 function Banner(){
     return(
-        <div></div>
+        <img src="/img/banner.png" alt="banner da pagina principal"/>
     )
 }
 export default Banner
