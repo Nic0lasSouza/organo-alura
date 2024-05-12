@@ -18,11 +18,11 @@ const Input = styled.input`
 const Container =styled.div`
     margin: 24px 0;
 `;
-const CampoTexto = () =>{
+const CampoTexto = (props) =>{
     return(
         <Container>
-            <Nome>Nome</Nome>
-            <Input placeholder="Digite seu nome"/>
+            <Nome>{props.label}</Nome>
+            <Input placeholder={props.placeholder}/>
         </Container>
     )
 }
