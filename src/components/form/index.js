@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import CampoTexto from "../CampoText/index"
+import ListaSuspensa from "../ListaSuspensa";
+import { times } from "../ListaSuspensa/times";
 
 const SectionContainer = styled.section`
     display:flex;
@@ -17,10 +19,11 @@ const Formulario = () => {
     return (
         <SectionContainer>
             <Form>
-                <h2>Preencha os dados parar criar o card do colaborador</h2>
+                <h2>Preencha os dados parar criar o card do colaborador(a)</h2>
                 <CampoTexto label="Nome" placeholder="Digite seu nome" />
                 <CampoTexto label="Cargo" placeholder="Digite seu cargo" />
                 <CampoTexto label="Imagem" placeholder="Informe o endereço da imagem" />
+                <ListaSuspensa label="Times" itens={times}/>
             </Form>
         </SectionContainer>
     )

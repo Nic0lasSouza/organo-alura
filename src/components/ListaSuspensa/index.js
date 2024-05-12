@@ -1,18 +1,33 @@
 import styled from "styled-components";
 
-const Container = styled.div``;
-
+const Container = styled.div`
+    
+`;
+const Itens = styled.select`
+    background-color: #FFFFF;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    width:100%;
+    height: 80px;
+    border: none;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding:24px;
+`;
+const Nome = styled.label`
+    display: block;
+    margin:bottom: 8px;
+    font-size:18px
+    font-weight: 600;
+`;
 const ListaSuspensa = (props) => {
     return(
         <Container>
-            <label>{props.label}</label>
-            <select>
-                <option>
+            <Nome>{props.label}</Nome>
+            <Itens>
                     {props.itens.map(item => {
-                        return <option>{item}</option>
+                        return <option key={item}>{item}</option>
                     })}
-                </option>
-            </select>
+            </Itens>
         </Container>
     )
 }
