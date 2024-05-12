@@ -2,6 +2,7 @@ import styled from "styled-components";
 import CampoTexto from "../CampoText/index"
 import ListaSuspensa from "../ListaSuspensa";
 import { times } from "../ListaSuspensa/times";
+import Botao from "../Buttom";
 
 const SectionContainer = styled.section`
     display:flex;
@@ -24,6 +25,7 @@ const Formulario = () => {
                 <CampoTexto label="Cargo" placeholder="Digite seu cargo" />
                 <CampoTexto label="Imagem" placeholder="Informe o endereço da imagem" />
                 <ListaSuspensa label="Times" itens={times}/>
+                <Botao texto="Criar Card"/>
             </Form>
         </SectionContainer>
     )
