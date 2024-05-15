@@ -20,13 +20,14 @@ const Nome = styled.label`
     font-weight: 600;
 `;
 const ListaSuspensa = (props) => {
+
     return(
         <Container>
             <Nome>{props.label}</Nome>
-            <Itens>
-                    {props.itens.map(item => {
-                        return <option key={item}>{item}</option>
-                    })}
+            <Itens onChange={evento =>props.aoAlterado(evento.target.value)} required={props.required} value={props.value}>
+                {props.itens.map(item => {
+                    return <option key={item}>{item}</option>
+                })}
             </Itens>
         </Container>
     )

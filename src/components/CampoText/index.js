@@ -20,10 +20,15 @@ const Container =styled.div`
     margin: 24px 0;
 `;
 const CampoTexto = (props) =>{
+
+    // let valor = '';
+    const aoDigitado = (evento) =>{
+        props.aoAlterado(evento.target.value)
+    }
     return(
         <Container>
             <Nome>{props.label}</Nome>
-            <Input placeholder={props.placeholder}/>
+            <Input value={props.valor} onChange={aoDigitado} required={props.obrigatorio} placeholder={props.placeholder}/>
         </Container>
     )
 }

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import CampoTexto from "../CampoText/index"
 import ListaSuspensa from "../ListaSuspensa";
-import { times } from "../ListaSuspensa/times";
 import Botao from "../Buttom";
+import { useState } from "react";
 
 const SectionContainer = styled.section`
     display:flex;
@@ -17,14 +17,39 @@ const Form = styled.form`
     box-shadow:7px 7px 15px rgba(0, 0, 0, 0.08);
 `;
 const Formulario = () => {
+
+    const times = [
+        'Programação',
+        'Front-End',
+        'Data Science',
+        'Programação',
+        'Devops',
+        'Ux e Design',
+        'Mobile',
+        'Inovação e Gestão'
+    ]
+
+    const [nome, setNome] = useState('');
+    const [cargo, setCargo] = useState('');
+    const [imagem, setImagem] = useState('');
+    const [time, setTime] = useState('');
+
+    const aoSalvar = (evento)=>{
+        evento.preventDefault()
+        console.log("Formulário foi submetido =>", nome, cargo, imagem, time )
+    }
     return (
         <SectionContainer>
-            <Form>
+            <Form onSubmit={aoSalvar}>
                 <h2>Preencha os dados parar criar o card do colaborador(a)</h2>
-                <CampoTexto label="Nome" placeholder="Digite seu nome" />
-                <CampoTexto label="Cargo" placeholder="Digite seu cargo" />
-                <CampoTexto label="Imagem" placeholder="Informe o endereço da imagem" />
-                <ListaSuspensa label="Times" itens={times}/>
+                <CampoTexto
+                obrigatorio={true} label="Nome" placeholder="Digite seu nome" valor={nome} aoAlterado={valor => setNome(valor)}/>
+                <CampoTexto
+                obrigatorio={true} label="Cargo" placeholder="Digite seu cargo" valor={cargo} aoAlterado={valor => setCargo(valor)}/>
+                <CampoTexto
+                label="Imagem" placeholder="Informe o endereço da imagem" valor={imagem} aoAlterado={valor => setImagem(valor)}/>
+                <ListaSuspensa
+                required={true} label="Times" itens={times} valor={time} aoAlterado={valor => setTime(valor)}/>
                 <Botao texto="Criar Card"/>
             </Form>
         </SectionContainer>
