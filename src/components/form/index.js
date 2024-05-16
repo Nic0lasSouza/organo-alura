@@ -16,7 +16,7 @@ const Form = styled.form`
     padding: 36px 64px;
     box-shadow:7px 7px 15px rgba(0, 0, 0, 0.08);
 `;
-const Formulario = () => {
+const Formulario = (props) => {
 
     const times = [
         'Programação',
@@ -36,7 +36,12 @@ const Formulario = () => {
 
     const aoSalvar = (evento)=>{
         evento.preventDefault()
-        console.log("Formulário foi submetido =>", nome, cargo, imagem, time )
+        props.aoColaboradorCadastrado({
+            nome,
+            cargo,
+            imagem,
+            time
+        })
     }
     return (
         <SectionContainer>
