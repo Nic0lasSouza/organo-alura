@@ -3,7 +3,6 @@ import CampoTexto from "../CampoText/index"
 import ListaSuspensa from "../ListaSuspensa";
 import Botao from "../Buttom";
 import { useState } from "react";
-import { times } from "../Time/time";
 
 const SectionContainer = styled.section`
     display:flex;
@@ -45,7 +44,7 @@ const Formulario = (props) => {
                 <CampoTexto
                 label="Imagem" placeholder="Informe o endereço da imagem" valor={imagem} aoAlterado={valor => setImagem(valor)}/>
                 <ListaSuspensa
-                required={true} label="Times" itens={times} valor={time} aoAlterado={valor => setTime(valor)}/>
+                required={true} label="Times" itens={props.times} valor={time} aoAlterado={valor => setTime(valor)}/>
                 <Botao texto="Criar Card"/>
             </Form>
         </SectionContainer>
