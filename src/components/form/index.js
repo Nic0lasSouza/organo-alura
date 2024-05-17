@@ -3,6 +3,7 @@ import CampoTexto from "../CampoText/index"
 import ListaSuspensa from "../ListaSuspensa";
 import Botao from "../Buttom";
 import { useState } from "react";
+import { times } from "../Time/time";
 
 const SectionContainer = styled.section`
     display:flex;
@@ -18,16 +19,6 @@ const Form = styled.form`
 `;
 const Formulario = (props) => {
 
-    const times = [
-        'Programação',
-        'Front-End',
-        'Data Science',
-        'Programação',
-        'Devops',
-        'Ux e Design',
-        'Mobile',
-        'Inovação e Gestão'
-    ]
 
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');

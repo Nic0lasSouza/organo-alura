@@ -3,19 +3,22 @@ import styled from "styled-components";
 const TimeContainer = styled.section`
     text-align:center;
     padding: 32px;
-    background-color: #D9F7E9;
+
 
     h3{
         font-size: 32px;
-        border-bottom: 4px solid #57C278;
+        border-bottom: 4px solid;
         display: inline-block;
         padding-bottom: 8px;
     }
 `;
+
 const Time = (props)=> {
+    const corDeFundo = { backgroundColor: props.corSecundaria};
+    const linhaBottom = {borderColor: props.corPrimaria};
     return(
-        <TimeContainer>
-            <h3>{props.nome}</h3>
+        <TimeContainer style={corDeFundo}>
+            <h3 style={linhaBottom}>{props.nome}</h3>
         </TimeContainer>
     )
 }
