@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Colaborador from "../CardColaborador";
 
 const TimeContainer = styled.section`
     text-align:center;
@@ -19,6 +20,7 @@ const Time = (props)=> {
     return(
         <TimeContainer style={corDeFundo}>
             <h3 style={linhaBottom}>{props.nome}</h3>
+            <Colaborador/>
         </TimeContainer>
     )
 }
