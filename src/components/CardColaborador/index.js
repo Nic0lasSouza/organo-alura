@@ -33,15 +33,15 @@ const Cargo = styled.h5`
     color: #212121;
     padding: 16px;
 `;
-const Colaborador = () =>{
+const Colaborador = ({nome, imagem, cargo}) =>{
     return(
         <ColaboradorContainer>
             <Cabecalho>
-                <ImgProfile src='https://github.com/Nic0lasSouza.png' alt='Nicolas Souza foto de perfil'/>
+                <ImgProfile src={imagem} alt={nome}/>
             </Cabecalho>
             <Rodape>
-                <Nome>Nicolas Souza</Nome>
-                <Cargo>Aluno de Engenharia de Software</Cargo>
+                <Nome>{nome}</Nome>
+                <Cargo>{cargo}</Cargo>
 
             </Rodape>
         </ColaboradorContainer>

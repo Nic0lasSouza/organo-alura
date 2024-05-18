@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Colaborador from "../CardColaborador";
+// import Colaborador from "../CardColaborador";
 
 const TimeContainer = styled.section`
     text-align:center;
@@ -13,14 +14,21 @@ const TimeContainer = styled.section`
         padding-bottom: 8px;
     }
 `;
-
+const Colaboradores = styled.div`
+    display: flex;
+    justify-content: space-around;
+    margin-top: 32px;
+    flex-wrap: wrap;
+`;
 const Time = (props)=> {
     const corDeFundo = { backgroundColor: props.corSecundaria};
     const linhaBottom = {borderColor: props.corPrimaria};
     return(
         <TimeContainer style={corDeFundo}>
             <h3 style={linhaBottom}>{props.nome}</h3>
-            <Colaborador/>
+            <Colaboradores>
+                {props.colaboradores.map(colaborador => <Colaborador nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem}/>)}
+            </Colaboradores>
         </TimeContainer>
     )
 }
