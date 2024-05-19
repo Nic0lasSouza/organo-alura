@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Banner from './components/Banner';
 import Formulario from './components/form';
 import Time from './components/Time';
+
 function App() {
 
   const times = [
@@ -47,19 +48,28 @@ function App() {
       console.log(colaborador)
       setColaboradores([...colaboradores, colaborador])
     }
+    
   return (
     <div className="App">
       <Banner/>
       <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador =>aoColaboradorAdicionado(colaborador)}/>
-      {times.map(time => <Time
-          key={time.nome}
-          nome={time.nome}
-          corPrimaria={time.corPrimaria}
-          corSecundaria={time.corSecundaria}
-          colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}/>)}
+      <div>
+        {times.map(time => (
+          <div>
+              <Time
+              key={time.id}
+              nome={time.nome}
+              corPrimaria={time.corPrimaria}
+              corSecundaria={time.corSecundaria}
+              colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+              />
+          </div>
+        ))}
+      </div>
 
     </div>
   );
+  
 }
 
 export default App;
