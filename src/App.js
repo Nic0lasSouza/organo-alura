@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Banner from './components/Banner';
 import Formulario from './components/form';
 import Time from './components/Time';
+import Footer from './components/footer/index.js';
 
 function App() {
 
@@ -45,7 +46,6 @@ function App() {
     const [colaboradores, setColaboradores] = useState([])
 
     const aoColaboradorAdicionado = (colaborador) =>{
-      console.log(colaborador)
       setColaboradores([...colaboradores, colaborador])
     }
     
@@ -57,7 +57,7 @@ function App() {
         {times.map(time => (
           <div>
               <Time
-              key={time.id}
+              key={time.nome}
               nome={time.nome}
               corPrimaria={time.corPrimaria}
               corSecundaria={time.corSecundaria}
@@ -66,7 +66,7 @@ function App() {
           </div>
         ))}
       </div>
-
+      <Footer/>
     </div>
   );
   

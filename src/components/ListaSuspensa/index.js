@@ -24,7 +24,8 @@ const ListaSuspensa = (props) => {
     return(
         <Container>
             <Nome>{props.label}</Nome>
-            <Itens onChange={evento =>props.aoAlterado(evento.target.value)} required={props.required} value={props.value}>
+            <Itens onChange={evento =>props.aoAlterado(evento.target.value)} required={props.required} value={props.valor}>
+                <option value={""}></option>
                 {props.itens.map(item => {
                     return <option key={item}>{item}</option>
                 })}

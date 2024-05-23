@@ -24,12 +24,13 @@ const Time = (props)=> {
     const corDeFundo = { backgroundColor: props.corSecundaria};
     const linhaBottom = {borderColor: props.corPrimaria};
     return(
-        <TimeContainer style={corDeFundo}>
+        (props.colaboradores.length > 0) ? <TimeContainer style={corDeFundo}>
             <h3 style={linhaBottom}>{props.nome}</h3>
             <Colaboradores>
-                {props.colaboradores.map(colaborador => <Colaborador nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem}/>)}
+                {props.colaboradores.map(colaborador => <Colaborador corDeFundo={props.corPrimaria} key={colaborador.nome} nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem}/>)}
             </Colaboradores>
-        </TimeContainer>
+        </TimeContainer> 
+        :''
     )
 }
 export default Time;

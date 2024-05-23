@@ -33,10 +33,10 @@ const Cargo = styled.h5`
     color: #212121;
     padding: 16px;
 `;
-const Colaborador = ({nome, imagem, cargo}) =>{
+const Colaborador = ({nome, imagem, cargo, corDeFundo}) =>{
     return(
         <ColaboradorContainer>
-            <Cabecalho>
+            <Cabecalho style={{backgroundColor: corDeFundo}}>
                 <ImgProfile src={imagem} alt={nome}/>
             </Cabecalho>
             <Rodape>
