@@ -42,7 +42,7 @@ const Colaborador = ({nome, imagem, cargo, corDeFundo}) =>{
             <Rodape>
                 <Nome>{nome}</Nome>
                 <Cargo>{cargo}</Cargo>
-
+                <button>teste</button>
             </Rodape>
         </ColaboradorContainer>
     )
