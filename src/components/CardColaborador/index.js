@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import { IoMdCloseCircle } from "react-icons/io";
 
 const ColaboradorContainer = styled.div`
     width: 280px;
+    position:relative;
 `;
 const Cabecalho = styled.div`
     background-color:  #F0F0F0;
@@ -33,16 +35,23 @@ const Cargo = styled.h5`
     color: #212121;
     padding: 16px;
 `;
-const Colaborador = ({nome, imagem, cargo, corDeFundo}) =>{
+
+const Deletarstyle = styled.div`
+    position: absolute;
+    cursor: pointer;
+    right:-10px;
+    top: -10px;
+`;
+const Colaborador = ({nome, imagem, cargo, corDeFundo, aoDeletar}) =>{
     return(
         <ColaboradorContainer>
+            <Deletarstyle onClick={aoDeletar}><IoMdCloseCircle size={26}/></Deletarstyle>
             <Cabecalho style={{backgroundColor: corDeFundo}}>
                 <ImgProfile src={imagem} alt={nome}/>
             </Cabecalho>
             <Rodape>
                 <Nome>{nome}</Nome>
                 <Cargo>{cargo}</Cargo>
-                <button>teste</button>
             </Rodape>
         </ColaboradorContainer>
     )
