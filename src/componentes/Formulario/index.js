@@ -1,9 +1,25 @@
 import { useState } from 'react'
+import styled from 'styled-components';
 import Botao from '../Botao'
 import CampoTexto from '../CampoTexto'
 import ListaSuspensa from '../ListaSuspensa'
-import './formulario.css'
 
+const FormularioContainer= styled.section`
+    display: flex;
+    justify-content: center;
+    margin: 80px 0;
+`;
+const FormularioStyle = styled.form`
+    max-width: 80%;
+    background: #F7F7F7;
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    padding: 36px 64px;
+`;
+const Titulo = styled.h2`
+    font-weight: 400;
+    font-size: 32px;
+`;
 const Formulario = ({aoCadastrar, times}) => {
 
     const [nome, setNome] = useState('')
@@ -23,9 +39,9 @@ const Formulario = ({aoCadastrar, times}) => {
     }
 
     return (
-        <section className="formulario-container">
-            <form className="formulario" onSubmit={aoSubmeter}>
-                <h2>Preencha os dados para criar o card do colaborador.</h2>
+        <FormularioContainer>
+            <FormularioStyle onSubmit={aoSubmeter}>
+                <Titulo>Preencha os dados para criar o card do colaborador.</Titulo>
                 <CampoTexto
                     obrigatorio={true}
                     label='Nome'
@@ -49,8 +65,8 @@ const Formulario = ({aoCadastrar, times}) => {
                     valor={time}
                     aoAlterado={valor => setTime(valor)}/>
                 <Botao texto='Criar card' />
-            </form>
-        </section>
+            </FormularioStyle>
+        </FormularioContainer>
     )
 }
 
