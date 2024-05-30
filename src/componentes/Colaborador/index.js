@@ -45,7 +45,9 @@ const BotaoFechar = styled.div`
 const Colaborador = ({ colaborador, corDeFundo, aoDeletar }) => {
     return (
     <ContainerColaborador>
-        <BotaoFechar><AiFillCloseCircle size={25} className="deletar" onClick={aoDeletar} /></BotaoFechar>
+        <BotaoFechar>
+        <AiFillCloseCircle size={25} className="deletar" onClick={() => aoDeletar(colaborador.id)} />
+        </BotaoFechar>
         <CabecalhoColaborador style={{ backgroundColor: corDeFundo }}>
             <ImgColaborador src={colaborador.imagem} alt={colaborador.nome} />
         </CabecalhoColaborador>

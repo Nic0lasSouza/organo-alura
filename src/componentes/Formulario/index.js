@@ -20,12 +20,14 @@ const Titulo = styled.h2`
     font-weight: 400;
     font-size: 32px;
 `;
-const Formulario = ({aoCadastrar, times}) => {
+const Formulario = ({aoCadastrar, times, cadastrarTime}) => {
 
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
     const [time, setTime] = useState('')
+    const [nomeTime, setNomeTime] = useState('')
+    const [corTime, setCorTime] = useState('')
 
     const aoSubmeter = (evento) => {
         evento.preventDefault()
@@ -65,6 +67,26 @@ const Formulario = ({aoCadastrar, times}) => {
                     valor={time}
                     aoAlterado={valor => setTime(valor)}/>
                 <Botao texto='Criar card' />
+            </FormularioStyle>
+            <FormularioStyle onSubmit={(evento) =>{
+                evento.preventDefault()
+                cadastrarTime({nome: nomeTime, cor: corTime})
+            }
+            }>
+                <Titulo>Preencha os dados para criar um novo time.</Titulo>
+                <CampoTexto
+                    obrigatorio
+                    label='Nome'
+                    placeholder='Digite o nome do time'
+                    valor={nomeTime}
+                    aoAlterado={valor => setNomeTime(valor)}/>
+                <CampoTexto
+                    obrigatorio
+                    label='Cor'
+                    placeholder='Digite a cor do time'
+                    valor={corTime}
+                    aoAlterado={valor => setCorTime(valor)}/>
+                <Botao texto='Criar um novo time' />
             </FormularioStyle>
         </FormularioContainer>
     )

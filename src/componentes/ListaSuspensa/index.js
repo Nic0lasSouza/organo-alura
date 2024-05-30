@@ -14,7 +14,7 @@ const Opcoes = styled.select`
     border-radius: 0px;
     width: 100%;
     border: none;
-    font-size: 24px;
+    font-size: 18px;
     padding: 24px;
     box-sizing: border-box;
 `;

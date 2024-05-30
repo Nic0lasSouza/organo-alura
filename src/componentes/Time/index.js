@@ -32,7 +32,7 @@ const Time = ({ time, colaboradores, aoDeletar, mudarCor}) => {
     return (
 
         colaboradores.length > 0 && <TimeContainer style={{ backgroundImage: 'url(/img/fundo.png)', backgroundColor: hexToRgba(time.cor, '0.6')}}>
-        <InputCor type='color' value={time.cor} onChange={evento => mudarCor(evento.target.value, time.nome)}/>
+        <InputCor type='color' value={time.cor} onChange={evento => mudarCor(evento.target.value, time.id)}/>
             <NomeTime style={{ borderColor: time.cor }}>{time.nome}</NomeTime>
             <ColaboradorStyle>
                 {colaboradores.map((colaborador, indice) => <Colaborador key={indice} colaborador={colaborador} corDeFundo={time.cor} aoDeletar={aoDeletar} />)}
