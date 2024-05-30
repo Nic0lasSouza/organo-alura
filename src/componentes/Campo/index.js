@@ -15,19 +15,19 @@ export const Input = styled.input`
     background-color: #FFFFF;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
     width:100%;
-    height: 80px;
+    height: 40px;
     border: none;
     font-size: 16px;
     box-sizing: border-box;
-    padding:24px
+    padding:5px 24px;
 `;
-const CampoTexto = ({ label, placeholder, valor, aoAlterado, obrigatorio = false }) => {
+const Campo = ({type = 'text' , label, placeholder, valor, aoAlterado, obrigatorio = false }) => {
     return (
     <Container>
         <Nome>{label}</Nome>
-        <Input value={valor} onChange={evento => aoAlterado(evento.target.value)} required={obrigatorio} placeholder={placeholder}/> 
+        <Input type={type} value={valor} onChange={evento => aoAlterado(evento.target.value)} required={obrigatorio} placeholder={placeholder}/> 
     </Container>
     )
 }
 
-export default CampoTexto
+export default Campo
