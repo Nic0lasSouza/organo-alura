@@ -20,7 +20,7 @@ const Footer =styled.footer`
 
 const Rodape = () => {
     return (
-    <Footer>
+    <Footer style={{ backgroundImage: 'url(/img/fundo.png)'}}>
        <section>
        <ul>
             <li>
